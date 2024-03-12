@@ -9,8 +9,6 @@ public partial class SceneManager : Node
     
     public override void _Ready()
     {
-        // _game = GetNode<Control>("%Game");
-
         Events.Instance.LifecycleStartGameRequested += InstanceOnLifecycleStartGameRequested;
     }
 

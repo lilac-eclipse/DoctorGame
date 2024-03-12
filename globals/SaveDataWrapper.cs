@@ -6,7 +6,7 @@ namespace DoctorGame.globals;
 
 public class SaveData
 {
-    public GameState GameState { get; init; }
+    public GameState GameState { get; init; } = new();
 }
 public partial class SaveDataWrapper : Node
 {
