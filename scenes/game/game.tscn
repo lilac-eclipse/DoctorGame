@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://do03ljjynar86"]
+[gd_scene load_steps=4 format=3 uid="uid://do03ljjynar86"]
 
 [ext_resource type="Script" path="res://scenes/game/Game.cs" id="1_87rwm"]
+[ext_resource type="Texture2D" uid="uid://66hkxalimy1b" path="res://scenes/game/assets/Female Sprite by Sutemo.png" id="2_y60vf"]
+[ext_resource type="Texture2D" uid="uid://dtf8sjqhcuu1n" path="res://scenes/game/assets/electronics1.png" id="3_1v23e"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -18,20 +20,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 alignment = 1
 
-[node name="CountLabel" type="Label" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Count: 0"
-horizontal_alignment = 1
+alignment = 1
 
-[node name="IncrButton" type="Button" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(51, 58)
 layout_mode = 2
-text = "Click me!"
+size_flags_vertical = 4
+
+[node name="PatientSprite" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Control"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_y60vf")
+centered = false
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Yes, only from pain."
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "how often?"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "how long?"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "since when?"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "no more questions."
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(56, 42)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ComputerSprite" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer2/Control"]
+texture = ExtResource("3_1v23e")
+centered = false
+region_enabled = true
+region_rect = Rect2(4, 99, 56, 42)

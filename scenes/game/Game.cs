@@ -7,15 +7,15 @@ public partial class Game : Control
 {
 	private GameState GameState => SaveDataWrapper.Instance.SaveData.GameState;
 	
-	private Label _countLabel;
-	private Button _incrButton;
+	// private Label _countLabel;
+	// private Button _incrButton;
 	
 	public override void _Ready()
 	{
-		_countLabel = GetNode<Label>("%CountLabel");
-		_incrButton = GetNode<Button>("%IncrButton");
-		
-		_incrButton.Pressed += IncrButtonOnPressed;
+		// _countLabel = GetNode<Label>("%CountLabel");
+		// _incrButton = GetNode<Button>("%IncrButton");
+		//
+		// _incrButton.Pressed += IncrButtonOnPressed;
 		UpdateCountLabel();
 	}
 
@@ -28,6 +28,6 @@ public partial class Game : Control
 
 	private void UpdateCountLabel()
 	{
-		_countLabel.Text = "Count: " + GameState.Count;
+		// _countLabel.Text = "Count: " + GameState.Count;
 	}
 }
